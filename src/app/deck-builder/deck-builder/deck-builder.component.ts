@@ -19,16 +19,12 @@ export class DeckBuilderComponent implements OnInit {
 
   ngOnInit() {
     this.cards = this.cardService.getCards();
-
-    // .subscribe(data => {
-    //   this.cards = data;
-    //   console.log(this.cards);
-    // });
   }
 
   addCardToDeck(card){
     if (this.newDeck.length <= 40) {
     this.newDeck.push(card);
+    console.log(this.newDeck[0].colors)
     } else {
       alert("Deck Full!")
     }
