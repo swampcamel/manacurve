@@ -1,0 +1,17 @@
+.card-view {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.card-style{
+  height: 50px;
+}
+
+.deckBuildWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  margin: 42px auto 0;
+
+}
