@@ -2,12 +2,14 @@
 
 <div class="card-list">
   <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
-    <div *cdkVirtualFor="let card of cards" class="card-style" (click)="addCardToDeck(card)">{{card}}</div>
+    <div *cdkVirtualFor="let card of cards" class="card-style" (click)="addCardToDeck(card)">{{card.name}}</div>
   </cdk-virtual-scroll-viewport>
 </div>
 <div class="deck-list">
+  <label>Enter Deck Title: </label>
+  <input type="text">
   <div class="deckCards" *ngFor="let deckCard of newDeck" (click)="removeCardFromDeck(deckCard)">
-    {{deckCard}}
+    {{deckCard.name}}
   </div>
 </div>
 </div>

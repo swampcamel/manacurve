@@ -10,26 +10,39 @@ import { CardService } from '../../card.service';
 })
 
 export class DeckBuilderComponent implements OnInit {
-  cards = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
+  cards;
   newDeck = [];
 
   constructor(private cardService: CardService) { }
 
 
   ngOnInit() {
-    console.log('cards are: ' + this.cardService.getCards()); //take this out; this is for testing
+    this.cards = this.cardService.getCards();
+
+    // .subscribe(data => {
+    //   this.cards = data;
+    //   console.log(this.cards);
+    // });
   }
 
   addCardToDeck(card){
+    if (this.newDeck.length <= 40) {
     this.newDeck.push(card);
+    } else {
+      alert("Deck Full!")
+    }
   }
 
   removeCardFromDeck(card){
-    for( var i = 0; i < this.newDeck.length-1; i++){
+    for( var i = 0; i < this.newDeck.length; i++){
       if(this.newDeck[i] === card) {
         this.newDeck.splice(i, 1);
         break;
       }
     }
+  }
+
+  sendDeck(title: string) {
+    let newDeck: Deck = new Deck(title, this.newDeck);
   }
 }
