@@ -15,6 +15,13 @@ export class DeckBuilderComponent implements OnInit {
 
   addCardToDeck(card){
     this.newDeck.push(card);
-    console.log(this.newDeck)
+  }
+
+  removeCardFromDeck(card){
+    this.newDeck.forEach((item, index) => {
+      if(item === card) {
+        this.newDeck[index].splice(index, 1);
+      }
+    })
   }
 }
