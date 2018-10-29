@@ -17,8 +17,12 @@ export class CardService {
     })
   }
 
-  getCards() {
+getCards() {
   return this.keys;
+}
+
+getCardById(key) {
+  return this.database.object('GRN/cards/'+ key).valueChanges()
 }
 
 }
