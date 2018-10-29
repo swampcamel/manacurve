@@ -30,15 +30,13 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
+
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    ScrollingModule
-=======
+    ScrollingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
->>>>>>> a280f49c862364714b977f52721c3c9f18148177
   ],
   providers: [],
   bootstrap: [AppComponent]
