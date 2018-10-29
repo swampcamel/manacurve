@@ -2,15 +2,17 @@
 
 <div class="card-list">
   <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
-    <div *cdkVirtualFor="let card of cards" class="card-style" (click)="addCardToDeck(card)">{{card.name}}</div>
+    <div *cdkVirtualFor="let card of cards" class="card-style" (click)="addCardToDeck(card)">
+    <span class="detail">{{card.manaCost}}</span><span class="detail">{{card.name}}</span><span class="detail power-tough"><span *ngIf="card.toughness">{{card.power}} / {{card.toughness}}</span></span>
+    </div>
   </cdk-virtual-scroll-viewport>
 </div>
 <div class="deck-list">
   <label>Enter Deck Title: </label>
   <input #deckTitle type="text">
   <div class="deckCards" *ngFor="let deckCard of newDeck" (click)="removeCardFromDeck(deckCard)">
-    {{deckCard.name}}
-  </div>
+<span>{{deckCard.name}}</span>
+</div>
   <br>
   <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)">Add Deck!</button>
 </div>
