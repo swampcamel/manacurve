@@ -1,4 +1,42 @@
 {
+  "DECKS": [
+    {
+      "name": "Demo Deck",
+      "cards": [
+        {
+          "artist": "Zoltan Boros",
+          "cmc": 3,
+          "colorIdentity": [
+            "W"
+          ],
+          "colors": [
+            "White"
+          ],
+          "flavor": "\"Watch carefully. The gap between death and victory is thinner than your blade.\"",
+          "id": "aab699fa4415a7b8a92c5ea4146d7ed6eb184ddf",
+          "imageName": "blade instructor",
+          "layout": "normal",
+          "manaCost": "{2}{W}",
+          "multiverseid": 452751,
+          "name": "Blade Instructor",
+          "number": "1",
+          "power": "3",
+          "rarity": "Common",
+          "subtypes": [
+            "Human",
+            "Soldier"
+          ],
+          "text": "Mentor (Whenever this creature attacks, put a +1/+1 counter on target attacking creature with lesser power.)",
+          "toughness": "1",
+          "type": "Creature — Human Soldier",
+          "types": [
+            "Creature"
+          ],
+          "watermark": "Boros"
+        }
+      ]
+    }
+  ],
   "GRN": {
     "name": "Guilds of Ravnica",
     "code": "GRN",
