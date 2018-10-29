@@ -25,10 +25,11 @@ export class DeckBuilderComponent implements OnInit {
   }
 
   removeCardFromDeck(card){
-    this.newDeck.forEach((item, index) => {
-      if(item === card) {
-        this.newDeck[index].splice(index, 1);
+    for( var i = 0; i < this.newDeck.length-1; i++){
+      if(this.newDeck[i] === card) {
+        this.newDeck.splice(i, 1);
+        break;
       }
-    })
+    }
   }
 }
