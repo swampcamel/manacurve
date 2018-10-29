@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -10,6 +12,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
+import { theMasterFirebaseConfig } from './api-keys';
+
+export const firebaseConfig = {
+  apiKey: theMasterFirebaseConfig.apiKey,
+  authDomain: theMasterFirebaseConfig.authDomain,
+  databaseURL: theMasterFirebaseConfig.databaseURL,
+  storageBucket: theMasterFirebaseConfig.storageBucket
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +30,15 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     ScrollingModule
+=======
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
+>>>>>>> a280f49c862364714b977f52721c3c9f18148177
   ],
   providers: [],
   bootstrap: [AppComponent]
