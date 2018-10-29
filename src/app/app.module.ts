@@ -30,7 +30,6 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
