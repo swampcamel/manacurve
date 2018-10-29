@@ -6,7 +6,7 @@
   </cdk-virtual-scroll-viewport>
 </div>
 <div class="deck-list">
-  <div class="deckCards" *ngFor="let deckCard of newDeck">
+  <div class="deckCards" *ngFor="let deckCard of newDeck" (click)="removeCardFromDeck(deckCard)">
     {{deckCard}}
   </div>
 </div>
