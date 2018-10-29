@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CardService } from '../../card.service';
+import { Deck } from '../../models/deck.model';
 
 @Component({
   selector: 'app-deck-builder',
