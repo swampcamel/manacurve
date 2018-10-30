@@ -2,4 +2,19 @@
 
 * {
   font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
 }

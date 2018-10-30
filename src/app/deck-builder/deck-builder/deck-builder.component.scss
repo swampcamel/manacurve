@@ -1,5 +1,13 @@
+.deckBuildWrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  margin: 42px auto 42px;
+}
+
 .card-view {
-  height: 600px;
+  height: 60vh;
   width: 500px;
   border: 1px solid black;
 }
@@ -14,17 +22,29 @@
   padding-right: 22px
 }
 
-.deckBuildWrapper {
+
+.card-list {
+  height: 100%;
+  left: 0;
+  .detail {
+    width: 140px;
+  }
+  .power-tough {
+    text-align: right;
+  }
+}
+
+.deck-display {
+  height: 60vh;
+  min-width: 10em;
   display: flex;
-  justify-content: space-around;
-  width: 800px;
-  margin: 42px auto 0;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid black;
 }
 
-.detail {
-  width: 140px;
-}
+.deck-edit-actions {
+  button {
 
-.power-tough {
-  text-align: right;
+  }
 }
