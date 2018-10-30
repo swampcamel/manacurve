@@ -1,5 +1,13 @@
+.deckBuildWrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  margin: 42px auto 42px;
+}
+
 .card-view {
-  height: 24em;
+  height: 60vh;
   width: 500px;
   border: 1px solid black;
 }
@@ -14,13 +22,6 @@
   padding-right: 22px
 }
 
-.deckBuildWrapper {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  width: 800px;
-  margin: 42px auto 42px;
-}
 
 .card-list {
   height: 100%;
@@ -34,10 +35,12 @@
 }
 
 .deck-display {
+  height: 100%;
   min-width: 10em;
   display: flex;
   flex-direction: column;
   text-align: center;
+  border: 1px solid black;
 }
 
 .deck-edit-actions {
