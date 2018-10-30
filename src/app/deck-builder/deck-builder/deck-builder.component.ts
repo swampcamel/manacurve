@@ -13,7 +13,10 @@ import {AngularFireObject} from '@angular/fire/database'
 
 export class DeckBuilderComponent implements OnInit {
   cards;
-  filteredCards;
+  filterGroup: {
+    colors: [];
+    type: string;
+  };
   newDeck = [];
 
   constructor(private cardService: CardService) { }

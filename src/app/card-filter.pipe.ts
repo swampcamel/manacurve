@@ -10,9 +10,7 @@ export class CardFilterPipe implements PipeTransform {
     if (cardList) {
       this.output = cardList.filter(card => {
         if (card.colors){
-
           if (card.colors.includes("White")) {
-
             return card
           }}
         })
