@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CardService } from '../../card.service';
 import { Deck } from '../../models/deck.model';
+import {AngularFireObject} from '@angular/fire/database'
 
 @Component({
   selector: 'app-deck-builder',
@@ -12,19 +13,24 @@ import { Deck } from '../../models/deck.model';
 
 export class DeckBuilderComponent implements OnInit {
   cards;
+  filterGroup;
   newDeck = [];
 
   constructor(private cardService: CardService) { }
 
 
   ngOnInit() {
-    this.cards = this.cardService.getCards();
+
+    this.cards = this.cardService.getCards()
+    this.filterGroup = {
+      dummy: "test",
+      rarity: "Common"
+    }
   }
 
   addCardToDeck(card){
     if (this.newDeck.length <= 40) {
     this.newDeck.push(card);
-    console.log(this.newDeck[0].colors)
     } else {
       alert("Deck Full!")
     }
@@ -42,5 +48,11 @@ export class DeckBuilderComponent implements OnInit {
   sendDeck(title: string) {
     let newDeck: Deck = new Deck(title, this.newDeck);
     this.cardService.addDeck(newDeck);
+  }
+
+  updateRarity(rarityValue) {
+    console.log(rarityValue)
+    this.filterGroup.rarity = rarityValue;
+    console.log(this.filterGroup)
   }
 }

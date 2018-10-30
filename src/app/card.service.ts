@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
@@ -9,11 +9,12 @@ import 'rxjs/add/operator/map';
 export class CardService {
   keys;
   decks;
-  cardKey;
+  objectList;
   mtg: AngularFireList<any>;
   constructor(private database: AngularFireDatabase) {
     this.mtg = database.list('GRN/cards');
     this.decks = database.list('DECKS');
+    this.objectList = database.object('GRN/cards').valueChanges();
     this.keys = this.mtg.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val()}))
     })
@@ -31,5 +32,6 @@ addDeck(deck) {
   this.decks.push(deck);
   console.log(this.decks);
 }
+
 
 }
