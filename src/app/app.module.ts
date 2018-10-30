@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
-
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +12,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 import { theMasterFirebaseConfig } from './api-keys';
+
+import { CardFilterPipe } from './card-filter.pipe'
 
 export const firebaseConfig = {
   apiKey: theMasterFirebaseConfig.apiKey,
@@ -25,7 +26,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     DeckBuilderComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CardFilterPipe
   ],
   imports: [
     BrowserModule,
