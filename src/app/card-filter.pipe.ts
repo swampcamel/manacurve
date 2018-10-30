@@ -3,14 +3,15 @@ import { Observable } from 'rxjs'
 import { filter, map } from 'rxjs/operators';
 import { pipe } from 'rxjs'
 
-@Pipe({name: 'cardFilter'})
+@Pipe({name: 'cardFilter', pure: false})
 export class CardFilterPipe implements PipeTransform {
   output;
-  transform(cardList) {
+  transform(cardList, filterGroup) {
     if (cardList) {
+      console.log(filterGroup)
       this.output = cardList.filter(card => {
-        if (card.colors){
-          if (card.colors.includes("White")) {
+        if (card.rarity){
+          if (filterGroup.rarity == card.rarity) {
             return card
           }}
         })

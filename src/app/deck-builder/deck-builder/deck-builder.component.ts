@@ -13,25 +13,19 @@ import {AngularFireObject} from '@angular/fire/database'
 
 export class DeckBuilderComponent implements OnInit {
   cards;
-  filterGroup: {
-    colors: [];
-    type: string;
-  };
+  filterGroup;
   newDeck = [];
 
   constructor(private cardService: CardService) { }
 
 
   ngOnInit() {
-    // this.cardService.getCards().subscribe(data => {
-    //   this.cards = Object.values(data)
-    //   console.log(this.cards)
-    //   console.log(typeof this.cards)
-    //   console.log(data)
-    //   console.log(typeof data)
-    // });
 
     this.cards = this.cardService.getCards()
+    this.filterGroup = {
+      dummy: "test",
+      rarity: "Common"
+    }
   }
 
   addCardToDeck(card){
@@ -56,15 +50,9 @@ export class DeckBuilderComponent implements OnInit {
     this.cardService.addDeck(newDeck);
   }
 
-  // filterByColor() {
-  //     // If this.FilteredCards = null, then this.cards = this.filteredCards; What if they filter down to none?
-  //
-  //   this.filteredCards = this.cards;
-  //   for (let i = 0; i <= this.filteredCards.length; i++) {
-  //     console.log([i])
-  //     console.log(this.newDeck[0].colors)
-  //     console.log("Anything")
-  //   };
-  // }
-
+  updateRarity(rarityValue) {
+    console.log(rarityValue)
+    this.filterGroup.rarity = rarityValue;
+    console.log(this.filterGroup)
+  }
 }
