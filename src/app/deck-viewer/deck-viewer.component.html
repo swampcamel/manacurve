@@ -1,5 +1,19 @@
 <div class="decks-container">
-  <div class="view-decks">
+
+
+<!-- code below is us trying to set up a virtual scroll -->
+
+  <!-- <div class="card-list">
+  <ng-container *ngIf="decks | async">
+  <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
+  <div *cdkVirtualFor="let deck of decks" class="card-style" (click)="selectCard(card)">
+  <span class="detail">{{deck.title}}</span><span class="detail">{{deck.deckLength}}</span><button class="add-card-btn" type="button" (click)="addCardToDeck(card)">+</button>
+</div>
+</cdk-virtual-scroll-viewport>
+</ng-container>
+</div> -->
+
+  <div>
     <h2>All My Decks</h2>
     <div class="deck" *ngFor="let deck of decks | async">
       <hr>
@@ -16,6 +30,10 @@
       <button mat-raised-button color="accent" type="button" (click)="initiateDeckDeletion(deck)">Delete this deck</button>
     </div>
   </div>
+
+
+
+
 
   <div class="middle-column">
     <h2>The Cards in the<br>Deck I Clicked</h2>

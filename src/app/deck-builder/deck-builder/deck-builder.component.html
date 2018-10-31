@@ -141,5 +141,5 @@
 <div class="deck-edit-actions">
   <label>Enter Deck Title: </label>
   <input #deckTitle type="text">
-  <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)">Add Deck!</button>
+  <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)" (click)="deckTitle.value=''">Add Deck!</button>
 </div>
