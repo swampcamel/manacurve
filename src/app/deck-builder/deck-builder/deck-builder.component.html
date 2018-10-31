@@ -118,6 +118,7 @@
     </div>
   </div>
 
+
   <div class="card-list">
     <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
       <div *cdkVirtualFor="let card of cards | async | cardFilter:filterGroup" class="card-style" (click)="addCardToDeck(card)">
@@ -131,12 +132,10 @@
       <span>{{deckCard.name}}</span>
     </div>
   </div>
-  <div class="deck-edit-actions">
-    <label>Enter Deck Title: </label>
-    <input #deckTitle type="text">
-    <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)">Add Deck!</button>
-  </div>
-
+  <app-card-detail></app-card-detail>
 </div>
-
-<button mat-raised-button color="warn" type="button" value= "red" (click)="filterByColor()">Red</button>
+<div class="deck-edit-actions">
+  <label>Enter Deck Title: </label>
+  <input #deckTitle type="text">
+  <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)">Add Deck!</button>
+</div>
