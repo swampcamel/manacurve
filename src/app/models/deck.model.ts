@@ -1,9 +1,10 @@
 export class Deck {
 
+
   deckLength: number;
   colorScheme: any[] = [];
 
-  constructor(public title: string, public cardArray: any[]) {
+  constructor(public title: string, public cardArray: any[], public dateCreated) {
     this.title = title;
     this.deckLength = this.cardArray.length;
     this.cardArray.forEach(card => {
