@@ -1,7 +1,7 @@
 <div class="deckBuildWrapper">
 
   <div class="filters-list">
-    <div class="rarity-filters">
+    <div class="filter-styles rarity-filters">
       <div class="rarity-option">
         <label for="Common">Common:</label>
         <input type="checkbox" name="Common" value="Common" (change)=changeRarity($event.target) checked>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <hr>
-    <div class="types-filters">
+    <div class="filter-styles types-filters">
       <div class="type-option">
         <label for="Creature">Creature: </label>
         <input type="checkbox" name="Creature" value="Creature" (change)=changeType($event.target) checked>
@@ -52,6 +52,68 @@
           <label for="Artifact">Artifact: </label>
           <input type="checkbox" name="Artifact" value="Artifact" (change)=changeType($event.target) checked>
         </div>
+      </div>
+    </div>
+    <hr>
+    <div class="filter-styles color-filters">
+      <div class="color-option">
+        <label for="White">White:</label>
+        <input type="checkbox" name="White" value="White" (change)=changeColor($event.target) checked>
+      </div>
+      <div class="color-option">
+        <label for="Blue">Blue:</label>
+        <input type="checkbox" name="Blue" value="Blue" (change)=changeColor($event.target) checked>
+      </div>
+      <div class="color-option">
+        <label for="Red">Red:</label>
+        <input type="checkbox" name="Red" value="Red" (change)=changeColor($event.target) checked>
+      </div>
+      <div class="color-option">
+        <label for="Green">Green:</label>
+        <input type="checkbox" name="Green" value="Green" (change)=changeColor($event.target) checked>
+      </div>
+      <div class="color-option">
+        <label for="Black">Black:</label>
+        <input type="checkbox" name="Black" value="Black" (change)=changeColor($event.target) checked>
+      </div>
+      <div class="color-option">
+        <label for="Colorless">Colorless:</label>
+        <input type="checkbox" name="Colorless" value="Colorless" (change)=changeColor($event.target) checked>
+      </div>
+    </div>
+    <hr>
+    <div class="filter-styles cmc-filters">
+      <div class="cmc-option">
+        <label for="0">0</label>
+        <input type="checkbox" name="0" value=0 (change)=changeCMC($event.target) checked>
+      </div>
+      <div class="cmc-option">
+        <label for="1">1</label>
+        <input type="checkbox" name="1" value=1 (change)=changeCMC($event.target) checked>
+      </div>
+      <div class="cmc-option">
+        <label for="2">2</label>
+        <input type="checkbox" name="2" value=2 (change)=changeCMC($event.target) checked>
+      </div>
+      <div class="cmc-option">
+        <label for="3">3</label>
+        <input type="checkbox" name="3" value=3 (change)=changeCMC($event.target) checked>
+      </div>
+      <div class="cmc-option">
+        <label for="4">4</label>
+        <input type="checkbox" name="4" value=4 (change)=changeCMC($event.target) checked>
+      </div>
+      <div class="cmc-option">
+        <label for="5">5</label>
+        <input type="checkbox" name="5" value=5 (change)=changeCMC($event.target) checked>
+      </div>
+      <div class="cmc-option">
+        <label for="6">6</label>
+        <input type="checkbox" name="6" value=6 (change)=changeCMC($event.target) checked>
+      </div>
+      <div class="cmc-option">
+        <label for="7">7+</label>
+        <input type="checkbox" name="7" value=7 (change)=changeCMC($event.target) checked>
       </div>
     </div>
   </div>

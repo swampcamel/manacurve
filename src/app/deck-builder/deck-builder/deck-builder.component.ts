@@ -31,7 +31,12 @@ export class DeckBuilderComponent implements OnInit {
         {name:"Mythic Rare", value: true}
       ],
       Colors: [
-        {name: "White", value: true}
+        {name: "White", value: true},
+        {name: "Blue", value: true},
+        {name: "Red", value: true},
+        {name: "Green", value: true},
+        {name: "Black", value: true},
+        {name: "Colorless", value: true}
       ],
       Types: [
         {name: "Creature", value: true},
@@ -42,6 +47,16 @@ export class DeckBuilderComponent implements OnInit {
         {name: "Planeswalker", value: true},
         {name: "Sorcery", value: true},
         {name: "Artifact", value: true}
+      ],
+      cmc: [
+        {amount: 0, value: true},
+        {amount: 1, value: true},
+        {amount: 2, value: true},
+        {amount: 3, value: true},
+        {amount: 4, value: true},
+        {amount: 5, value: true},
+        {amount: 6, value: true},
+        {amount: 7, value: true}
       ]
     }
   }
@@ -78,6 +93,38 @@ export class DeckBuilderComponent implements OnInit {
     } else {
       this.filterGroup.Types.forEach(type => {
         if(type.name == eventTarget.name) {
+          type.value = false;
+        }
+      })
+    }
+  }
+
+  changeColor(eventTarget) {
+    if(eventTarget.checked) {
+      this.filterGroup.Colors.forEach(type => {
+        if(type.name == eventTarget.name) {
+          type.value = true;
+        }
+      })
+    } else {
+      this.filterGroup.Colors.forEach(type => {
+        if(type.name == eventTarget.name) {
+          type.value = false;
+        }
+      })
+    }
+  }
+
+  changeCMC(eventTarget) {
+    if(eventTarget.checked) {
+      this.filterGroup.cmc.forEach(type => {
+        if(type.amount == eventTarget.name) {
+          type.value = true;
+        }
+      })
+    } else {
+      this.filterGroup.cmc.forEach(type => {
+        if(type.amount == eventTarget.name) {
           type.value = false;
         }
       })
