@@ -1,3 +1,17 @@
-<p>
-  deck-viewer works!
-</p>
+<div class="decks-container">
+  <div class="left-column">
+    <h2>My Decks</h2>
+    <div class="deck" *ngFor="let deck of decks | async" (click)="showCardsInDeck(deck)">
+      <h3 *ngIf="deck.title">{{deck.title}}</h3>
+      <h3 *ngIf="!deck.title">Untitled Deck</h3>
+      <p>Length: {{deck.deckLength}}</p>
+      <p>Colors: {{deck.colorScheme}}</p>
+      <h5>Click to see cards</h5>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <h2>The Cards in My Deck</h2>
+    <p *ngFor="let card of deck.cardArray">{{card.name}}</p>
+  </div>
+</div>
