@@ -1,6 +1,6 @@
 
 <div *ngIf="selectedCard" class="card-container">
-  <div class="frame-type-line">
+  <div [ngClass]="['frame-type-line', selectedCard.colors[0]]">
     <div>
     <h1 class="name">{{selectedCard.name}}</h1> <h2 class="type">{{selectedCard.type}}</h2>
   </div>
@@ -10,7 +10,7 @@
 
   </div>
 
-  <div class="frame-text-box">
+  <div [ngClass]="['frame-text-box', selectedCard.colors[0]]">
 
     <p class="description ftb-inner-margin">{{selectedCard.text}}</p>
 
