@@ -10,6 +10,7 @@
       <ul *ngFor="let color of deck.colorScheme">
         <li>{{color}}</li>
       </ul>
+      <p *ngIf="deck.dateCreated">Created: {{deck.dateCreated | date: 'longDate'}} at {{deck.dateCreated | date: 'shortTime'}}</p>
       <button mat-raised-button color="primary" type="button" (click)="showCardsInDeck(deck)">See the cards in here</button>
       <br>
       <button mat-raised-button color="accent" type="button" (click)="initiateDeckDeletion(deck)">Delete this deck</button>
