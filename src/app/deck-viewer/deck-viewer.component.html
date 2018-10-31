@@ -1,0 +1,27 @@
+<div class="decks-container">
+  <div class="view-decks">
+    <h2>All My Decks</h2>
+    <div class="deck" *ngFor="let deck of decks | async">
+      <hr>
+      <h3 *ngIf="deck.title">{{deck.title}}</h3>
+      <h3 *ngIf="!deck.title">Boo on you!</h3>
+      <p>Length: {{deck.deckLength}}</p>
+      <p *ngIf="deck.colorScheme">Colors:</p>
+      <ul *ngFor="let color of deck.colorScheme">
+        <li>{{color}}</li>
+      </ul>
+      <button mat-raised-button color="primary" type="button" (click)="showCardsInDeck(deck)">See the cards in here</button>
+      <br>
+      <button mat-raised-button color="accent" type="button" (click)="initiateDeckDeletion(deck)">Delete this deck</button>
+    </div>
+  </div>
+
+  <div class="middle-column">
+    <h2>The Cards in the<br>Deck I Clicked</h2>
+    <p *ngFor="let card of currentDeck?.cardArray">{{card.name}}</p>
+  </div>
+
+  <div class="right-column">
+
+  </div>
+</div>

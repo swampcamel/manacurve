@@ -81,6 +81,7 @@ export class DeckBuilderComponent implements OnInit {
   sendDeck(title: string) {
     let newDeck: Deck = new Deck(title, this.newDeck);
     this.cardService.addDeck(newDeck);
+    this.newDeck = [];
   }
 
   changeType(eventTarget) {
