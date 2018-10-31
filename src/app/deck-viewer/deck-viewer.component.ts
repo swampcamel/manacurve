@@ -11,6 +11,7 @@ import { CardDetailComponent } from '../deck-builder/deck-builder/card-detail/ca
 export class DeckViewerComponent implements OnInit {
   decks;
   currentDeck;
+  currentCard;
 
   constructor(private deckService: DeckService) { }
 
@@ -28,6 +29,10 @@ export class DeckViewerComponent implements OnInit {
     if (confirm("Do you REEEEEEALLY want to delete this deck?")) {
       this.deckService.deleteDeck(deckToDelete);
     }
+  }
+
+  selectCardFromDeck(card) {
+    this.currentCard = card;
   }
 
 }
