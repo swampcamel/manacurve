@@ -125,6 +125,7 @@
         <span class="detail">{{card.manaCost}}</span><span class="detail">{{card.name}}</span><span class="detail power-tough"><span *ngIf="card.toughness">{{card.power}} / {{card.toughness}}</span></span>
       </div>
     </cdk-virtual-scroll-viewport>
+    <span>Total # of Results: <span #filterTotal>value</span></span>
   </div>
 
   <div #deckDisplay class="deck-display">
