@@ -63,6 +63,7 @@
  padding: 50px 6px;
  box-sizing: border-box;
  font-size: 1.2em;
+ position: relative;
 }
 
 /*
@@ -91,6 +92,29 @@ margin-bottom: 7px;
  box-shadow:
  0 0 0 5px #26714A,
  -3px 3px 2px 5px #171314;
+}
+
+.power-detail, .toughness-detail {
+  position: absolute;
+  font-size: 2.5rem;
+  border-top: solid 2px black;
+  padding: 4px;
+  text-align: center;
+  background: rgba(78, 89, 77, 0.4);
+}
+
+.power-detail {
+  border-right: solid 2px black;
+  border-top-right-radius: 15px;
+  bottom: 0;
+  left: 0;
+}
+
+.toughness-detail {
+  border-left: solid 2px black;
+  border-top-left-radius: 15px;
+  bottom: 0;
+  right: 0;
 }
 
 .frame-bottom-info {
@@ -159,10 +183,13 @@ margin-bottom: 7px;
 */
 
 .name, .type {
- font-size: 1.3em;
  margin-left: 10px;
  align-self: baseline;
  font-weight: 600;
+}
+
+.name {
+   font-size: 1.3em;
 }
 
 .flavour-text {
@@ -222,4 +249,49 @@ p {
  overflow: hidden;
  margin-right: 10px;
  align-self: center;
+}
+
+// Meyer Web Reset -- Clears alllll default browser CSS styles.
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }

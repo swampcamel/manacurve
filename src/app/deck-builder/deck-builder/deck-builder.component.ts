@@ -17,6 +17,7 @@ export class DeckBuilderComponent implements OnInit {
   cards;
   filterGroup;
   newDeck = [];
+  currentCard;
 
   constructor(private cardService: CardService) { }
 
@@ -151,5 +152,9 @@ export class DeckBuilderComponent implements OnInit {
         }
       })
     }
+  }
+
+  selectCard(card) {
+    this.currentCard = card;
   }
 }
