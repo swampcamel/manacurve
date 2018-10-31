@@ -1,12 +1,22 @@
 <div class="deckBuildWrapper">
 
   <div class="rarity-filters">
-    <select (change)="updateRarity($event.target.value)">
-      <option value="Common">Common</option>
-      <option value="Uncommon">Uncommon</option>
-      <option value="Rare">Rare</option>
-      <option value="Mythic Rare">Mythic Rare</option>
-    </select>
+    <div class="rarity-option">
+      <label name="Common">Common:</label>
+      <input type="checkbox" name="Common" value="Common" (change)=changeRarity($event.target) checked>
+    </div>
+    <div class="rarity-option">
+      <label name="Uncommon">Uncommon:</label>
+      <input type="checkbox" name="Uncommon" value="Uncommon" (change)=changeRarity($event.target) checked>
+    </div>
+    <div class="rarity-option">
+      <label name="Rare">Rare:</label>
+      <input type="checkbox" name="Rare" value="Rare" (change)=changeRarity($event.target) checked>
+    </div>
+    <div class="rarity-option">
+      <label name="Mythic Rare">Mythic Rare:</label>
+      <input type="checkbox" name="Mythic Rare" value="Mythic Rare" (change)=changeRarity($event.target) checked>
+    </div>
   </div>
 
   <div class="card-list">

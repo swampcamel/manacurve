@@ -3,6 +3,7 @@ import { CardService } from '../../card.service';
 import { Deck } from '../../models/deck.model';
 import {AngularFireObject} from '@angular/fire/database'
 
+
 @Component({
   selector: 'app-deck-builder',
   templateUrl: './deck-builder.component.html',
@@ -24,13 +25,18 @@ export class DeckBuilderComponent implements OnInit {
     this.cards = this.cardService.getCards()
     this.filterGroup = {
       dummy: "test",
-      rarity: "Common"
+      Rarities: [
+        {name: "Common", value: true},
+        {name:"Uncommon", value: true},
+        {name:"Rare", value: true},
+        {name:"Mythic Rare", value: true}
+      ]
     }
   }
 
   addCardToDeck(card){
     if (this.newDeck.length <= 40) {
-    this.newDeck.push(card);
+      this.newDeck.push(card);
     } else {
       alert("Deck Full!")
     }
@@ -50,9 +56,25 @@ export class DeckBuilderComponent implements OnInit {
     this.cardService.addDeck(newDeck);
   }
 
-  updateRarity(rarityValue) {
-    console.log(rarityValue)
-    this.filterGroup.rarity = rarityValue;
-    console.log(this.filterGroup)
+  // updateRarity(rarityValue) {
+  //   console.log(rarityValue)
+  //   this.filterGroup.rarity = rarityValue;
+  //   console.log(this.filterGroup)
+  // }
+
+  changeRarity(eventTarget) {
+    if(eventTarget.checked) {
+      this.filterGroup.Rarities.forEach(type => {
+        if(type.name == eventTarget.name) {
+          type.value = true;
+        }
+      })
+    } else {
+      this.filterGroup.Rarities.forEach(type => {
+        if(type.name == eventTarget.name) {
+          type.value = false;
+        }
+      })
+    }
   }
 }
