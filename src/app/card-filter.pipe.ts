@@ -9,22 +9,28 @@ export class CardFilterPipe implements PipeTransform {
   transform(cardList, filterGroup) {
     if (cardList) {
       console.log(filterGroup)
-      console.log(filterGroup.Rarities[0].value)
       this.output = cardList.filter(card => {
-        if (card.rarity){
-          for (let i = 0; i < filterGroup.Rarities.length; i++)
-          // filterGroup.Rarities.forEach(rarity =>
-            {
-            if(filterGroup.Rarities[i].value === true && filterGroup.Rarities[i].name == card.rarity){
-              console.log("test")
-          // if (filterGroup.rarity == card.rarity) {
-            return card
+        if(card.types) {
+          for (let i=0; i < filterGroup.Types.length; i++) {
+            for (let j=0; j < card.types.length; j++) {
+              if (filterGroup.Types[i].value === true && filterGroup.Types[i].name == card.types[j]) {
+                if (card.rarity){
+                  for (let i = 0; i < filterGroup.Rarities.length; i++)
+                  {
+                    if(filterGroup.Rarities[i].value === true && filterGroup.Rarities[i].name == card.rarity){
+                      return card
+                    }
+                  }
+                }
+              }
+            }
           }
         }
-      }})
-
-        console.log(this.output)
-        return this.output;
       }
-    }
+    )
+
+    console.log(this.output)
+    return this.output;
   }
+}
+}

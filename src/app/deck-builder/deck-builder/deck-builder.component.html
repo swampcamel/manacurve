@@ -1,21 +1,58 @@
 <div class="deckBuildWrapper">
 
-  <div class="rarity-filters">
-    <div class="rarity-option">
-      <label name="Common">Common:</label>
-      <input type="checkbox" name="Common" value="Common" (change)=changeRarity($event.target) checked>
+  <div class="filters-list">
+    <div class="rarity-filters">
+      <div class="rarity-option">
+        <label for="Common">Common:</label>
+        <input type="checkbox" name="Common" value="Common" (change)=changeRarity($event.target) checked>
+      </div>
+      <div class="rarity-option">
+        <label for="Uncommon">Uncommon:</label>
+        <input type="checkbox" name="Uncommon" value="Uncommon" (change)=changeRarity($event.target) checked>
+      </div>
+      <div class="rarity-option">
+        <label for="Rare">Rare:</label>
+        <input type="checkbox" name="Rare" value="Rare" (change)=changeRarity($event.target) checked>
+      </div>
+      <div class="rarity-option">
+        <label for="Mythic Rare">Mythic Rare:</label>
+        <input type="checkbox" name="Mythic Rare" value="Mythic Rare" (change)=changeRarity($event.target) checked>
+      </div>
     </div>
-    <div class="rarity-option">
-      <label name="Uncommon">Uncommon:</label>
-      <input type="checkbox" name="Uncommon" value="Uncommon" (change)=changeRarity($event.target) checked>
-    </div>
-    <div class="rarity-option">
-      <label name="Rare">Rare:</label>
-      <input type="checkbox" name="Rare" value="Rare" (change)=changeRarity($event.target) checked>
-    </div>
-    <div class="rarity-option">
-      <label name="Mythic Rare">Mythic Rare:</label>
-      <input type="checkbox" name="Mythic Rare" value="Mythic Rare" (change)=changeRarity($event.target) checked>
+    <hr>
+    <div class="types-filters">
+      <div class="type-option">
+        <label for="Creature">Creature: </label>
+        <input type="checkbox" name="Creature" value="Creature" (change)=changeType($event.target) checked>
+        <div class="type-option">
+          <label for="Enchantment">Enchantment: </label>
+          <input type="checkbox" name="Enchantment" value="Enchantment" (change)=changeType($event.target) checked>
+        </div>
+        <div class="type-option">
+          <label for="Instant">Instant: </label>
+          <input type="checkbox" name="Instant" value="Instant" (change)=changeType($event.target) checked>
+        </div>
+        <div class="type-option">
+          <label for="Equipment">Equipment: </label>
+          <input type="checkbox" name="Equipment" value="Equipment" (change)=changeType($event.target) checked>
+        </div>
+        <div class="type-option">
+          <label for="Land">Land: </label>
+          <input type="checkbox" name="Land" value="Land" (change)=changeType($event.target) checked>
+        </div>
+        <div class="type-option">
+          <label for="Planeswalker">Planeswalker: </label>
+          <input type="checkbox" name="Planeswalker" value="Planeswalker" (change)=changeType($event.target) checked>
+        </div>
+        <div class="type-option">
+          <label for="Sorcery">Sorcery: </label>
+          <input type="checkbox" name="Sorcery" value="Sorcery" (change)=changeType($event.target) checked>
+        </div>
+        <div class="type-option">
+          <label for="Artifact">Artifact: </label>
+          <input type="checkbox" name="Artifact" value="Artifact" (change)=changeType($event.target) checked>
+        </div>
+      </div>
     </div>
   </div>
 

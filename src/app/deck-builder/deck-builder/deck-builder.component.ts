@@ -24,12 +24,24 @@ export class DeckBuilderComponent implements OnInit {
 
     this.cards = this.cardService.getCards()
     this.filterGroup = {
-      dummy: "test",
       Rarities: [
         {name: "Common", value: true},
         {name:"Uncommon", value: true},
         {name:"Rare", value: true},
         {name:"Mythic Rare", value: true}
+      ],
+      Colors: [
+        {name: "White", value: true}
+      ],
+      Types: [
+        {name: "Creature", value: true},
+        {name: "Enchantment", value: true},
+        {name: "Instant", value: true},
+        {name: "Equipment", value: true},
+        {name: "Land", value: true},
+        {name: "Planeswalker", value: true},
+        {name: "Sorcery", value: true},
+        {name: "Artifact", value: true}
       ]
     }
   }
@@ -56,11 +68,21 @@ export class DeckBuilderComponent implements OnInit {
     this.cardService.addDeck(newDeck);
   }
 
-  // updateRarity(rarityValue) {
-  //   console.log(rarityValue)
-  //   this.filterGroup.rarity = rarityValue;
-  //   console.log(this.filterGroup)
-  // }
+  changeType(eventTarget) {
+    if(eventTarget.checked) {
+      this.filterGroup.Types.forEach(type => {
+        if(type.name == eventTarget.name) {
+          type.value = true;
+        }
+      })
+    } else {
+      this.filterGroup.Types.forEach(type => {
+        if(type.name == eventTarget.name) {
+          type.value = false;
+        }
+      })
+    }
+  }
 
   changeRarity(eventTarget) {
     if(eventTarget.checked) {
