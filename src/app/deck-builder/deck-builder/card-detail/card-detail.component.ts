@@ -8,6 +8,12 @@ import { Component, Input } from '@angular/core';
 export class CardDetailComponent {
   @Input() selectedCard;
   constructor() { }
-
+  testForColor(card) {
+    if(card.colors == undefined) {
+      return "Grey";
+    } else {
+      return card.colors[0];
+    }
+  }
 
 }
