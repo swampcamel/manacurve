@@ -80,17 +80,57 @@
  border-right: 1px solid #fff;
 }
 
-.frame-header, .frame-art, .frame-type-line {
+.frame-type-line {
+  margin-bottom: 7px;
+}
+// .frame-header, .frame-art,
+
+.Green {
  box-shadow:
  0 0 0 2px #171314,
  0 0 0 5px #26714A,
  -3px 3px 2px 5px #171314;
-margin-bottom: 7px;
+
 }
+
+.White {
+ box-shadow:
+ 0 0 0 2px #171314,
+ 0 0 0 5px #f1f1ea,
+ -3px 3px 2px 5px #171314;
+
+}
+
+.Black {
+ box-shadow:
+ 0 0 0 2px #171314,
+ 0 0 0 5px #3b393a,
+ -3px 3px 2px 5px #171314;
+
+}
+
+.Red {
+ box-shadow:
+ 0 0 0 2px #171314,
+ 0 0 0 5px #de0c1a,
+ -3px 3px 2px 5px #171314;
+
+}
+
+.Blue {
+ box-shadow:
+ 0 0 0 2px #171314,
+ 0 0 0 5px #005e99,
+ -3px 3px 2px 5px #171314;
+
+}
+
+
 
 .frame-text-box {
  box-shadow:
- 0 0 0 5px #26714A,
+ 0,
+ // 0 0 0 5px #26714A,
  -3px 3px 2px 5px #171314;
 }
 
