@@ -2,7 +2,7 @@
   height: 100%;
   display: flex;
   justify-content: space-around;
-  width: 800px;
+  width: 1000px;
   margin: 42px auto 42px;
 }
 
@@ -41,6 +41,11 @@
   flex-direction: column;
   text-align: center;
   border: 1px solid black;
+}
+
+.rarity-filters {
+  width: 100%;
+  text-align: right;
 }
 
 .deck-edit-actions {
