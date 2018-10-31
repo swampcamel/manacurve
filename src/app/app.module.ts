@@ -14,7 +14,8 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 import { theMasterFirebaseConfig } from './api-keys';
 
-import { CardFilterPipe } from './card-filter.pipe'
+import { CardFilterPipe } from './card-filter.pipe';
+import { DeckViewerComponent } from './deck-viewer/deck-viewer.component'
 
 export const firebaseConfig = {
   apiKey: theMasterFirebaseConfig.apiKey,
@@ -28,7 +29,8 @@ export const firebaseConfig = {
     AppComponent,
     DeckBuilderComponent,
     WelcomeComponent,
-    CardFilterPipe
+    CardFilterPipe,
+    DeckViewerComponent
   ],
   imports: [
     BrowserModule,
