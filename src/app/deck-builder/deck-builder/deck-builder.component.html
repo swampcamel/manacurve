@@ -19,6 +19,7 @@
     </div>
   </div>
 
+
   <div class="card-list">
     <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
       <div *cdkVirtualFor="let card of cards | async | cardFilter:filterGroup" class="card-style" (click)="addCardToDeck(card)">
@@ -26,6 +27,8 @@
       </div>
     </cdk-virtual-scroll-viewport>
   </div>
+
+  <app-card-detail></app-card-detail>
 
   <div class="deck-display">
     <div class="deckCards" *ngFor="let deckCard of newDeck" (click)="removeCardFromDeck(deckCard)">
@@ -39,5 +42,3 @@
   </div>
 
 </div>
-
-<button mat-raised-button color="warn" type="button" value= "red" (click)="filterByColor()">Red</button>
