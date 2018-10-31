@@ -1,7 +1,8 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CardService } from '../../card.service';
 import { Deck } from '../../models/deck.model';
-import {AngularFireObject} from '@angular/fire/database'
+import {AngularFireObject} from '@angular/fire/database';
+
 
 
 @Component({
