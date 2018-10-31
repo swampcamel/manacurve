@@ -120,12 +120,14 @@
 
 
   <div class="card-list">
-    <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
-      <div *cdkVirtualFor="let card of cards | async | cardFilter:filterGroup" class="card-style" (click)="addCardToDeck(card)">
-        <span class="detail">{{card.manaCost}}</span><span class="detail">{{card.name}}</span><span class="detail power-tough"><span *ngIf="card.toughness">{{card.power}} / {{card.toughness}}</span></span>
-      </div>
-    </cdk-virtual-scroll-viewport>
-    <span>Total # of Results: <span #filterTotal>value</span></span>
+    <ng-container *ngIf="(cards | async |cardFilter:filterGroup) as result">
+      <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
+        <div *cdkVirtualFor="let card of result" class="card-style" (click)="addCardToDeck(card)">
+          <span class="detail">{{card.manaCost}}</span><span class="detail">{{card.name}}</span><span class="detail power-tough"><span *ngIf="card.toughness">{{card.power}} / {{card.toughness}}</span></span>
+        </div>
+      </cdk-virtual-scroll-viewport>
+      <span>Total # of Results: <span #filterTotal>{{result.length}}</span></span>
+    </ng-container>
   </div>
 
   <div #deckDisplay class="deck-display">
