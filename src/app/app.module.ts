@@ -5,7 +5,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { FormsModule } from '@angular/forms';
 import {ScrollingModule} from '@angular/cdk/scrolling';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder/deck-builder.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -34,7 +34,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRouting,
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
