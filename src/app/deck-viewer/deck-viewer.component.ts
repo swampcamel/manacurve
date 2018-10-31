@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DeckService } from '../deck.service';
+import { CardDetailComponent } from '../deck-builder/deck-builder/card-detail/card-detail.component';
 
 @Component({
   selector: 'app-deck-viewer',
