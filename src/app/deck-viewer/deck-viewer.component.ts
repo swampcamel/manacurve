@@ -9,6 +9,7 @@ import { DeckService } from '../deck.service';
 })
 export class DeckViewerComponent implements OnInit {
   decks;
+  currentDeck;
 
   constructor(private deckService: DeckService) { }
 
@@ -16,8 +17,10 @@ export class DeckViewerComponent implements OnInit {
     this.decks = this.deckService.getDecks();
   }
 
-  showCardsInDeck(){
-    
+  showCardsInDeck(deck){
+    this.currentDeck = deck;
+    console.log(this.currentDeck)
+    console.log(typeof this.currentDeck)
   }
 
 }
