@@ -9,22 +9,48 @@ export class CardFilterPipe implements PipeTransform {
   transform(cardList, filterGroup) {
     if (cardList) {
       console.log(filterGroup)
-      console.log(filterGroup.Rarities[0].value)
       this.output = cardList.filter(card => {
-        if (card.rarity){
-          for (let i = 0; i < filterGroup.Rarities.length; i++)
-          // filterGroup.Rarities.forEach(rarity =>
-            {
-            if(filterGroup.Rarities[i].value === true && filterGroup.Rarities[i].name == card.rarity){
-              console.log("test")
-          // if (filterGroup.rarity == card.rarity) {
-            return card
+
+        if(card.types) {
+          for (let i=0; i < filterGroup.Types.length; i++) {
+            for (let j=0; j < card.types.length; j++) {
+              if (filterGroup.Types[i].value === true && filterGroup.Types[i].name == card.types[j]) {
+                if (card.rarity){
+                  for (let i = 0; i < filterGroup.Rarities.length; i++)
+                  {
+                    if(filterGroup.Rarities[i].value === true && filterGroup.Rarities[i].name == card.rarity){
+
+                      if(card.cmc) {
+                        for(let i= 0; i < filterGroup.cmc.length; i++) {
+                          if((filterGroup.cmc[i].amount == card.cmc && filterGroup.cmc[i].value === true) || (filterGroup.cmc[i].amount == 7 && card.cmc >= 7 && filterGroup.cmc[i].value === true)) {
+
+                          if(!card.colors && filterGroup.Colors[filterGroup.Colors.length-1].value == true) {
+                            return card;
+                          }
+                          else if(card.colors){
+                            for (let i=0; i < filterGroup.Colors.length; i++) {
+                              for (let j=0; j < card.colors.length; j++) {
+                                if (filterGroup.Colors[i].value === true && filterGroup.Colors[i].name == card.colors[j]) {
+                                  return card;
+                                }
+                              }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
-      }})
-
-        console.log(this.output)
-        return this.output;
       }
-    }
+    )
+
+    console.log(this.output)
+    return this.output;
   }
+}
+}
