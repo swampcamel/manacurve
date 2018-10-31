@@ -19,4 +19,13 @@ export class DeckService {
   getDecks() {
     return this.keys;
   }
+
+  getDeckById(deck) {
+    return this.database.object('DECKS/' + deck.key)
+  }
+
+  deleteDeck(deckToDelete) {
+    const deckEntryInFirebase = this.getDeckById(deckToDelete);
+    deckEntryInFirebase.remove();
+  }
 }

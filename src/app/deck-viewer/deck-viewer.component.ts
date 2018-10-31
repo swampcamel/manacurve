@@ -23,4 +23,10 @@ export class DeckViewerComponent implements OnInit {
     console.log(typeof this.currentDeck)
   }
 
+  initiateDeckDeletion(deckToDelete) {
+    if (confirm("Do you REEEEEEALLY want to delete this deck?")) {
+      this.deckService.deleteDeck(deckToDelete);
+    }
+  }
+
 }
