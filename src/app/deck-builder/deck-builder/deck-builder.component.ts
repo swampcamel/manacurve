@@ -81,7 +81,11 @@ export class DeckBuilderComponent implements OnInit {
   }
 
   sendDeck(title: string) {
-    let newDeck: Deck = new Deck(title, this.newDeck);
+    const aDate = new Date;
+    const theDate = aDate.toISOString();
+    console.log(`a date is ${aDate}`);
+    console.log(`the date is ${theDate}`);
+    let newDeck: Deck = new Deck(title, this.newDeck, theDate);
     this.cardService.addDeck(newDeck);
     this.newDeck = [];
   }
