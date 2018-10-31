@@ -28,17 +28,15 @@
     </cdk-virtual-scroll-viewport>
   </div>
 
-  <app-card-detail></app-card-detail>
-
   <div class="deck-display">
     <div class="deckCards" *ngFor="let deckCard of newDeck" (click)="removeCardFromDeck(deckCard)">
       <span>{{deckCard.name}}</span>
     </div>
   </div>
-  <div class="deck-edit-actions">
-    <label>Enter Deck Title: </label>
-    <input #deckTitle type="text">
-    <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)">Add Deck!</button>
-  </div>
-
+  <app-card-detail></app-card-detail>
+</div>
+<div class="deck-edit-actions">
+  <label>Enter Deck Title: </label>
+  <input #deckTitle type="text">
+  <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)">Add Deck!</button>
 </div>
