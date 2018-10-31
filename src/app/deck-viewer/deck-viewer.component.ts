@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DeckService } from '../deck.service';
+import { CardDetailComponent } from '../deck-builder/deck-builder/card-detail/card-detail.component';
 
 @Component({
   selector: 'app-deck-viewer',
@@ -10,6 +11,7 @@ import { DeckService } from '../deck.service';
 export class DeckViewerComponent implements OnInit {
   decks;
   currentDeck;
+  currentCard;
 
   constructor(private deckService: DeckService) { }
 
@@ -27,6 +29,10 @@ export class DeckViewerComponent implements OnInit {
     if (confirm("Do you REEEEEEALLY want to delete this deck?")) {
       this.deckService.deleteDeck(deckToDelete);
     }
+  }
+
+  selectCardFromDeck(card) {
+    this.currentCard = card;
   }
 
 }

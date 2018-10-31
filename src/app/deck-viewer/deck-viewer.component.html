@@ -19,10 +19,10 @@
 
   <div class="middle-column">
     <h2>The Cards in the<br>Deck I Clicked</h2>
-    <p *ngFor="let card of currentDeck?.cardArray">{{card.name}}</p>
+    <p (click)="selectCardFromDeck(card)" *ngFor="let card of currentDeck?.cardArray">{{card.name}}</p>
   </div>
 
   <div class="right-column">
-
+    <app-card-detail [selectedCard]="currentCard"></app-card-detail>
   </div>
 </div>
