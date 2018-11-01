@@ -67,6 +67,24 @@
  position: relative;
 }
 
+.mana-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.mana-detail {
+  font-size: 24px;
+  line-height: 28px;
+  padding: 2px;
+  border: 2px black solid;
+  border-radius: 50%;
+  min-width: 32px;
+  font-family: monospace;
+  display: block;
+  text-align: center;
+  margin-right: 4px;
+}
+
 /*
  — — — — — — — — — — — — -
  — — — — — — — — — — — — -
