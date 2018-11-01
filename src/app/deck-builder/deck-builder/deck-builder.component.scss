@@ -1,7 +1,7 @@
 .deckBuildWrapper {
   // height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 1000px;
   margin: 42px auto 42px;
 }
@@ -19,13 +19,16 @@
   align-items: center;
   justify-content: space-around;
   padding-left: 22px;
-  padding-right: 22px
+  padding-right: 22px;
+  background:
+  linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) );
 }
 
 
 .card-list {
   height: 100%;
   left: 0;
+  border-left-style: none;
   .detail {
     width: 140px;
   }
@@ -41,10 +44,21 @@
   flex-direction: column;
   text-align: center;
   border: 1px solid black;
+  border-left-style: none;
 }
 
 .filters-list {
-  width: 100%
+  width: 100%;
+  max-width: 9em;
+  height: 60vh;
+  background-color: grey;
+  border: 1px solid black;
+  border-right-style: none;
+  padding-left: 0.2em;
+  padding-right: 0.25em;
+  > div {
+  padding-top: 0.5em;
+  }
 }
 
 .filter-styles {
@@ -53,9 +67,14 @@
 }
 
 .deck-edit-actions {
-
+  position: absolute;
+  bottom: 0;
+  transform: translate( -5vw, -16vh);
+  border: 1px solid black;
+  padding: 1em;
   button {
-
+  display: block;
+  margin: 1em auto auto;
   }
 }
 

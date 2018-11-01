@@ -1,12 +1,13 @@
 .card-container {
   border: 1px solid black;
    width: 22.5vw;
+   max-width: 376.672px;
    // height: 700px;
    margin: 0 auto;
    margin-top: 56px;
    border-radius: 25px;
    box-sizing: border-box;
-   box-shadow: -8px 9px 16px -3px gray;
+   box-shadow: -8px 9px 16px -3px grey;
    /*background: Should be Color-Specific/Dynamic. */
    background: #171314;
 }
@@ -109,6 +110,13 @@
 
 }
 
+.Grey {
+  box-shadow:
+  0 0 0 2px #171314,
+  0 0 0 5px grey,
+  -3px 3px 2px 5px #171314;
+}
+
 .Red {
  box-shadow:
  0 0 0 2px #171314,
@@ -199,7 +207,6 @@
  background:
  linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ),
  url(https://image.ibb.co/jKByZn/tile_bg_1.jpg);
- display: flex;
  margin-top: 10px;
  margin-left: 5px;
  margin-right: 5px;
@@ -207,12 +214,18 @@
  display: flex;
  justify-content: space-between;
  border-radius: 18px/40px;
+ align-items: center;
 }
 
 .frame-type-line {
  margin-top: 0;
 }
 
+.rarity-text {
+  font-style: italic;
+  display: flex;
+  justify-content: flex-end;
+}
 /*
  — — — — — — — — — — —
  — — — — — — — — — — —
@@ -223,7 +236,7 @@
 
 .name, .type {
  margin-left: 10px;
- align-self: baseline;
+ align-self: center;
  font-weight: 600;
 }
 
