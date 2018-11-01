@@ -1,7 +1,7 @@
 .deckBuildWrapper {
   // height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 1000px;
   margin: 42px auto 42px;
 }
@@ -19,7 +19,9 @@
   align-items: center;
   justify-content: space-around;
   padding-left: 22px;
-  padding-right: 22px
+  padding-right: 22px;
+  background:
+  linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) );
 }
 
 
@@ -44,7 +46,15 @@
 }
 
 .filters-list {
-  width: 100%
+  width: 100%;
+  max-width: 9em;
+  height: 60vh;
+  background-color: grey;
+  padding-left: 0.2em;
+  padding-right: 0.25em;
+  > div {
+  padding-top: 0.5em;
+  }
 }
 
 .filter-styles {
@@ -53,7 +63,6 @@
 }
 
 .deck-edit-actions {
-
   button {
 
   }
