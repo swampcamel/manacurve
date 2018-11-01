@@ -137,9 +137,10 @@
   </div>
 
   <app-card-detail [selectedCard]="currentCard"></app-card-detail>
-  <div class="deck-edit-actions">
-    <label>Enter Deck Title: </label>
-    <input #deckTitle type="text">
-    <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value)">Add Deck!</button>
-  </div>
+
+</div>
+<div class="deck-edit-actions">
+  <label>Enter Deck Title: </label>
+  <input #deckTitle type="text">
+  <button mat-raised-button color="accent" type="button" (click)="sendDeck(deckTitle.value); deckTitle.value=''">Add Deck!</button>
 </div>

@@ -11,6 +11,7 @@ import { DeckBuilderComponent } from './deck-builder/deck-builder/deck-builder.c
 import { WelcomeComponent } from './welcome/welcome.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { theMasterFirebaseConfig } from './api-keys';
 
@@ -45,7 +46,8 @@ export const firebaseConfig = {
     MatCheckboxModule,
     ScrollingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
