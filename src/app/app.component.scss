@@ -29,13 +29,10 @@ footer {
   margin-left: 8px;
 }
 
-.element {
-  margin-top: 8px;
-  height: 65px;
-  width: 65px;
-  background-color: navy;
-  border: 1px solid pink;
-  border-radius: 45%;
+.logo {
+  height: 7vh;
+  background-size: cover;
+  background-image: url(../assets/img/GRN-logo.png);
 }
 
 .mat-raised-button {
