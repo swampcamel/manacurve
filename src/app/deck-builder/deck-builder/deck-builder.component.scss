@@ -2,9 +2,10 @@
   // height: 100%;
   display: flex;
   justify-content: center;
-  width: 1000px;
+  width: 100%;
   margin: 42px auto 42px;
 }
+
 
 .card-view {
   height: 60vh;
@@ -86,4 +87,14 @@ app-card-detail {
 
 .add-card-btn {
   margin-left: 4px;
+}
+
+@media screen and (max-width: 1126px) {
+  .deckBuildWrapper {
+      flex-wrap: wrap;
+  }
+  .deck-edit-actions {
+    position: relative;
+    transform: translate(0,0);
+  }
 }

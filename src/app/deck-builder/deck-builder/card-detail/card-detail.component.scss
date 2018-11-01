@@ -1,6 +1,7 @@
 .card-container {
   border: 1px solid black;
    width: 22.5vw;
+   min-width: 300px;
    max-width: 376.672px;
    // height: 700px;
    margin: 0 auto;
@@ -11,7 +12,6 @@
    /*background: Should be Color-Specific/Dynamic. */
    background: #171314;
 }
-
 
 // .card-container {
 //  border: 1px solid black;

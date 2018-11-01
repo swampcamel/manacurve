@@ -1,8 +1,9 @@
 .decks-container {
+  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   button {
     margin: 0.5rem;
