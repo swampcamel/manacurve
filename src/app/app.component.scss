@@ -6,6 +6,8 @@ header {
   justify-content: space-around;
   background-image: url(../assets/img/background.jpg);
   background-size: cover;
+  overflow: auto;
+  position: absolute;
 }
 
 footer {
