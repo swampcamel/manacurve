@@ -122,7 +122,7 @@
   <div class="card-list">
     <ng-container *ngIf="(cards | async |cardFilter:filterGroup) as result">
       <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
-        <div *cdkVirtualFor="let card of result" class="card-style" (click)="selectCard(card)">
+        <div *cdkVirtualFor="let card of result; templateCacheSize: 100" class="card-style" (click)="selectCard(card)">
           <span class="detail">{{card.manaCost}}</span><span class="detail">{{card.name}}</span><span class="detail power-tough"><span *ngIf="card.toughness">{{card.power}} / {{card.toughness}}</span></span><button class="add-card-btn" type="button" (click)="addCardToDeck(card)">+</button>
         </div>
       </cdk-virtual-scroll-viewport>
