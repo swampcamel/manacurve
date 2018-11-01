@@ -40,16 +40,16 @@ Create decks or use template decks already in database.
 
 ## Contact Info
 
-  - Dan Mace:
+  - Dan Mace: mtg.coders@gmail.com
   - Eric Conner: theluvq@gmail.com
-  - Evan Filkins:
+  - Evan Filkins: evanfilkins@gmail.com
   - Josh Gearheart: other.josh.gearheart@gmail.com
 
 ## Technologies Used
 
   - Angular 7.0.3
   - JavaScript
-  - npm Webpack
+  - npm
   - Firebase
   - Angular Material
   - Google Chrome
@@ -57,8 +57,7 @@ Create decks or use template decks already in database.
 
 ## Known Bugs
 
-  - Quick scrolling of card list is laggy
-  - If cards added do not display immediately scrolling will update display
+- None.
 
 ## License
 
