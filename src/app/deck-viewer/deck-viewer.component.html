@@ -1,32 +1,35 @@
-<h2>All My Decks</h2>
-<div class="decks-container">
+<div class="container">
 
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let deck of decks | async">
-    <mat-expansion-panel-header>
-      <mat-panel-title *ngIf="deck.title">
-        {{deck.title}}
-      </mat-panel-title>
-      <mat-panel-title *ngIf="!deck.title">
-        Boo on you!
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>Size: {{deck.deckLength}} cards</p>
-    <p *ngIf="deck.colorScheme">Colors: <span *ngFor="let color of deck.colorScheme">{{color}} </span></p>
-    <p *ngIf="deck.dateCreated">Created: {{deck.dateCreated | date: 'short'}}</p>
-    <button mat-raised-button color="success" type="button" (click)="showCardsInDeck(deck)">View</button>
-    <button mat-raised-button color="warn" type="button" (click)="initiateDeckDeletion(deck)">X</button>
-  </mat-expansion-panel>
-</mat-accordion>
+  <div class="decks-container">
+    <h2>All My Decks</h2>
 
-  <div class="middle-column">
-    <div class="deck-view-card-cell" *ngFor="let card of currentDeck?.cardArray">
-      <hr>
-      <p (click)="selectCardFromDeck(card)">{{card.name}}</p>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let deck of decks | async">
+        <mat-expansion-panel-header>
+          <mat-panel-title *ngIf="deck.title">
+            {{deck.title}}
+          </mat-panel-title>
+          <mat-panel-title *ngIf="!deck.title">
+            Boo on you!
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Size: {{deck.deckLength}} cards</p>
+        <p *ngIf="deck.colorScheme">Colors: <span *ngFor="let color of deck.colorScheme">{{color}} </span></p>
+        <p *ngIf="deck.dateCreated">Created: {{deck.dateCreated | date: 'short'}}</p>
+        <button mat-raised-button color="success" type="button" (click)="showCardsInDeck(deck)">View</button>
+        <button mat-raised-button color="warn" type="button" (click)="initiateDeckDeletion(deck)">X</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="middle-column">
+      <div class="deck-view-card-cell" *ngFor="let card of currentDeck?.cardArray">
+        <hr>
+        <p (click)="selectCardFromDeck(card)">{{card.name}}</p>
+      </div>
     </div>
-  </div>
 
-  <div class="right-column">
-    <app-card-detail [selectedCard]="currentCard"></app-card-detail>
+    <div class="right-column">
+      <app-card-detail [selectedCard]="currentCard"></app-card-detail>
+    </div>
   </div>
 </div>
