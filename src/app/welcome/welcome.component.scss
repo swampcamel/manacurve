@@ -2,3 +2,13 @@ h1 {
   color: fuchsia;
   background: linear-gradient(to right, springgreen, skyblue)
 }
+
+img {
+  display: block;
+  z-index: -1;
+  max-height: 100vh;
+  max-width: 100vw;
+  background-size: cover;
+  overflow: hidden;
+  position: center;
+}
