@@ -27,4 +27,8 @@ export class CardDetailComponent {
     return splitMana;
   }
 
+  testForRarity(rarity) {
+  let returnedRarity =  rarity.split(" ").join("-");
+  return returnedRarity;
+  }
 }
