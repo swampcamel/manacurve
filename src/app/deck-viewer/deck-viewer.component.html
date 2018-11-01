@@ -1,43 +1,61 @@
+<h2>All My Decks</h2>
 <div class="decks-container">
 
 
 <!-- code below is us trying to set up a virtual scroll -->
 
-  <!-- <div class="card-list">
-  <ng-container *ngIf="decks | async">
-  <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
-  <div *cdkVirtualFor="let deck of decks" class="card-style" (click)="selectCard(card)">
-  <span class="detail">{{deck.title}}</span><span class="detail">{{deck.deckLength}}</span><button class="add-card-btn" type="button" (click)="addCardToDeck(card)">+</button>
-</div>
+<!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <div *cdkVirtualFor="let deck of decks | async" class="example-item">{{deck.title}}</div>
 </cdk-virtual-scroll-viewport>
-</ng-container>
+
+<div class="card-list">
+  <ng-container *ngIf="(decks | async) as result">
+    <cdk-virtual-scroll-viewport itemSize="50" class="card-view">
+      <div *cdkVirtualFor="let deck of result" class="card-style" (click)="selectCard(card)">
+        <span class="detail">{{deck.title}}</span><span class="detail">{{deck.deckLength}}</span><button class="add-card-btn" type="button" (click)="addCardToDeck(card)">+</button>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </ng-container>
 </div> -->
 
-  <div>
-    <h2>All My Decks</h2>
-    <div class="deck" *ngFor="let deck of decks | async">
-      <hr>
-      <h3 *ngIf="deck.title">{{deck.title}}</h3>
-      <h3 *ngIf="!deck.title">Boo on you!</h3>
-      <p>Length: {{deck.deckLength}}</p>
-      <p *ngIf="deck.colorScheme">Colors:</p>
-      <ul *ngFor="let color of deck.colorScheme">
-        <li>{{color}}</li>
-      </ul>
-      <p *ngIf="deck.dateCreated">Created: {{deck.dateCreated | date: 'longDate'}} at {{deck.dateCreated | date: 'shortTime'}}</p>
-      <button mat-raised-button color="primary" type="button" (click)="showCardsInDeck(deck)">See the cards in here</button>
-      <br>
-      <button mat-raised-button color="accent" type="button" (click)="initiateDeckDeletion(deck)">Delete this deck</button>
-    </div>
+<!-- <div class="deck-wrapper">
+  <div class="deck" *ngFor="let deck of decks | async">
+    <h3 *ngIf="deck.title">{{deck.title}}</h3>
+    <p *ngIf="!deck.title">Boo on you!</p>
+    <p>Size: {{deck.deckLength}} cards</p>
+    <p *ngIf="deck.colorScheme">Colors: <span *ngFor="let color of deck.colorScheme">{{color}} </span></p>
+    <p *ngIf="deck.dateCreated">Created: {{deck.dateCreated | date: 'short'}}</p>
+    <button mat-raised-button color="success" type="button" (click)="showCardsInDeck(deck)">View</button>
+    <button mat-raised-button color="warn" type="button" (click)="initiateDeckDeletion(deck)">X</button>
   </div>
+</div> -->
 
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let deck of decks | async">
+    <mat-expansion-panel-header>
+      <mat-panel-title *ngIf="deck.title">
+        {{deck.title}}
+      </mat-panel-title>
+      <mat-panel-title *ngIf="!deck.title">
+        Boo on you!
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Size: {{deck.deckLength}} cards</p>
+    <p *ngIf="deck.colorScheme">Colors: <span *ngFor="let color of deck.colorScheme">{{color}} </span></p>
+    <p *ngIf="deck.dateCreated">Created: {{deck.dateCreated | date: 'short'}}</p>
+    <button mat-raised-button color="success" type="button" (click)="showCardsInDeck(deck)">View</button>
+    <button mat-raised-button color="warn" type="button" (click)="initiateDeckDeletion(deck)">X</button>
+  </mat-expansion-panel>
+</mat-accordion>
 
 
 
 
   <div class="middle-column">
-    <h2>The Cards in the<br>Deck I Clicked</h2>
-    <p (click)="selectCardFromDeck(card)" *ngFor="let card of currentDeck?.cardArray">{{card.name}}</p>
+    <div class="deck-view-card-cell" *ngFor="let card of currentDeck?.cardArray">
+      <hr>
+      <p (click)="selectCardFromDeck(card)">{{card.name}}</p>
+    </div>
   </div>
 
   <div class="right-column">

@@ -1,12 +1,14 @@
-import { Component, /*ChangeDetectionStrategy,*/ OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { DeckService } from '../deck.service';
 import { CardDetailComponent } from '../deck-builder/deck-builder/card-detail/card-detail.component';
+import {AngularFireObject} from '@angular/fire/database';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-deck-viewer',
   templateUrl: './deck-viewer.component.html',
   styleUrls: ['./deck-viewer.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [DeckService]
 })
 export class DeckViewerComponent implements OnInit {
