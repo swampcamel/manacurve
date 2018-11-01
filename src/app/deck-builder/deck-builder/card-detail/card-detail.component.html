@@ -14,7 +14,7 @@
   </div>
 
   <div [ngClass]="['frame-text-box', testForColor(selectedCard)]">
-
+    <p class="ftb-inner-margin" *ngFor="let mana of manaToDisplay">{{mana}}</p>
     <p class="description ftb-inner-margin">{{selectedCard.text}}</p>
 
     <p class="flavour-text">{{selectedCard.flavor}}</p>
